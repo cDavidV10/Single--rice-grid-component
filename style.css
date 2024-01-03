@@ -1,0 +1,119 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+}
+
+:root {
+  --Cyan: hsl(179, 62%, 43%);
+  --ligthCyan: hsl(180, 65%, 45%);
+  --brigthYellow: hsl(71, 73%, 54%);
+  --ligthGray: hsl(204, 43%, 93%);
+  --grayishBlue: hsl(218, 22%, 67%);
+}
+
+body {
+  font-size: 16px;
+  background-color: var(--ligthGray);
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "info"
+    "membresia"
+    "us";
+  width: 80vw;
+  margin: 5vh auto 0;
+}
+
+.info,
+.subscription,
+.us {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+  grid-area: info;
+  background-color: #fff;
+  padding: 1.25rem;
+}
+
+.title,
+.subscription__title {
+  color: var(--Cyan);
+  font-weight: 700;
+}
+
+.info__price {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ligthGray);
+}
+
+.price {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.subtitle {
+  color: var(--brigthYellow);
+}
+
+.paragraph {
+  color: var(--grayishBlue);
+  line-height: 1.3rem;
+}
+
+.btn {
+  height: 2.5rem;
+  color: #fff;
+  background-color: var(--brigthYellow);
+  border: none;
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+}
+
+.btn:active{
+    scale: .9;
+}
+
+.subscription {
+  grid-area: membresia;
+  background-color: var(--Cyan);
+  color: #fff;
+}
+
+.subscription__title,
+.us__title {
+  color: #fff;
+}
+
+.us {
+  grid-area: us;
+  background-color: var(--ligthCyan);
+}
+
+.paragraph__us {
+  color: var(--ligthGray);
+  width: 65%;
+}
+
+@media screen and (width > 600px) {
+  .container {
+    grid-template-areas:
+      "info info"
+      "membresia us";
+    margin: 20vh auto 0;
+    width: 50vw;
+  }
+
+  .info,
+  .subscription,
+  .us {
+    padding: 1.75rem;
+  }
+}
